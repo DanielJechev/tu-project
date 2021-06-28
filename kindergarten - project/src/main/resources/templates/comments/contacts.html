@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head-priem}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="container" style="text-align: center; ">
+<br>
+<br>
+        <h3>ДГ ЗВЪНЧЕ</h3>
+        <h3>Директор- Даниел Жечев</h3>
+        <h3>тел: 056 056056</h3>
+        <h3>тел: 0899136078 </h3>
+        <h3>имейл: jechew@abv.bg</h3>
+        <br>
+        <br>
+
+        <link rel="stylesheet" href="/css/contacts.css">
+        <script src="/js/map.js"></script>
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyBJCTYpP4N6BlU02YwPxPM0DecTeztrbMc&sensor=false&language=bg"></script>
+
+        <div style="text-align: center;" class="w350">
+            <div id="map_1"  class="contacts_map center"></div>
+            <script>initializeMapID("map_1", 42.5057812, 27.4683953, 17);</script>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <h1 style="text-align: center; "><strong> <a href="comments">ИЗПРАТИ ЗАПИТВАНЕ</a></strong></h1>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

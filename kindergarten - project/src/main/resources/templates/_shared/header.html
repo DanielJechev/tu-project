@@ -1,0 +1,76 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
+
+        <th:block th:if="${session.user == null || session.user.username == null}">
+            <a class="navbar-brand text-white h4" href="/">Начало</a>
+        </th:block>
+
+        <th:block th:unless="${session.user == null || session.user.username == null}">
+            <a class="navbar-brand text-white h4" href="/home/all">Всички деца</a>
+        </th:block>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav row">
+                <th:block th:if="${session.user == null || session.user.username == null}">
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" href="/users/login">Вход</a>
+                    </li>
+                    <li class="nav-item col-md-4">
+                        <a class="nav-link text-white active h5" href="/users/register">Регистрация</a>
+                    </li>
+                </th:block>
+
+                <th:block th:unless="${session.user == null || session.user.username == null}">
+
+                    <th:block
+                            th:unless="${session.user.childrenName == null}">
+                        <a class="navbar-brand text-white h4" href="/">Начало</a>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/users/comments">Запитване</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/children/details">Избери група</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/children/education">Избери ЗИП</a>
+                        </li>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/users/profile">Профил</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <form th:action="@{/users/logout}" method="post">
+                                <button class="nav-link text-white active h5" type="submit">Изход</button>
+                            </form>
+                        </li>
+                    </th:block>
+
+                    <th:block
+                            th:if="${session.user.childrenName == null}">
+                        <a class="navbar-brand text-white h4" href="/">Начало</a>
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/users/comments">Запитване</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/children/details">Избери група</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-white active h5" href="/children/create">Запиши дете</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <form th:action="@{/users/logout}" method="post">
+                                <button class="btn btn-info text-white mb-3" type="submit">Изход</button>
+
+                            </form>
+                        </li>
+                    </th:block>
+                </th:block>
+            </ul>
+        </div>
+    </nav>
+</header>

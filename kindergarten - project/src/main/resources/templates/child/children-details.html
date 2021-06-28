@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="container">
+        <h1 class="text-center">Изберете група :</h1>
+        <br>
+        <h3 style="text-align: center; color:blue;l"><strong>Ако все още не сте избрали погледнете <a
+                href="http://localhost:8081/users/groups">ТУК .</a></strong></h3>
+
+        <form class="mx-auto w-100 bg-blur" th:action="@{/children/details}" method="post">
+            <div class="row">
+                <div class="ml-lg-5">
+                    <img src="/img/sun.jpg" class="border border-secondary" alt="sun image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/kalinka.jpg" class="border border-secondary" alt="kalinka image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/svetulka.jpg" class="border border-secondary" alt="svetulka image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/star.jpg" class="border border-secondary" alt="star image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/rusalka.jpg" class="border border-secondary" alt="rusalka image"
+                         height="150"
+                         width="100"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=".col-sm-3"></div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">слънце</h2>
+                        <label for="vid">
+                            <input type="radio" id="vid" class="ml-lg-5" value="слънце" name="vid">
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">калинка</h2>
+                        <label for="vid">
+                            <input type="radio" id="vid" class="ml-lg-5" value="калинка" name="vid">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">светулка</h2>
+                        <label for="vid">
+                            <input type="radio" id="vid" class="ml-lg-5" value="светулка" name="vid">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">звездичка</h2>
+                        <label for="vid">
+                            <input type="radio" id="vid" class="ml-lg-5" value="звездичка" name="vid">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">русалка</h2>
+                        <label for="vid">
+                            <input type="radio" id="vid" class="ml-lg-5" value="русалка" name="vid">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-holder d-flex justify-content-center">
+                <button class="btn btn-secondary text-white mb-3" type="submit">Запиши</button>
+            </div>
+        </form>
+    </div>
+
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

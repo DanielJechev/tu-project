@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head-reg}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div style="text-align:center;">
+        <script type="text/javascript" src="http://services.webestools.com/cpt_pages_views/73828-1-5.js"></script>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <th:block th:if="${kids}">
+                <div class="row flex-md-row" th:each="child : ${kids}">
+                    <div class="col-sm-3"></div>
+                    <div class="ml-lg-5">
+                        <img th:src="@{'/img/' +${child.gender} + '.jpg'}" width="150">
+                        <h2 class="text-white" th:text="${child.name}"></h2>
+
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

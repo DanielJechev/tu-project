@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="container">
+        <br>
+        <h1 class="text-center">Изберете ЗИП(задължително избираема подготовка): :</h1>
+
+        <form class="mx-auto w-100 bg-blur" th:action="@{/children/education}" method="post">
+            <div class="row">
+                <div class="ml-lg-5">
+                    <img src="/img/sport.jpg" class="border border-secondary" alt="sport image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/art.jpg" class="border border-secondary" alt="art image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/music.jpg" class="border border-secondary" alt="music image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/dance.jpg" class="border border-secondary" alt="dance image"
+                         height="150"
+                         width="100"/>
+                </div>
+                <div class="ml-lg-5">
+                    <img src="/img/mathematics.jpg" class="border border-secondary" alt="mathematics image"
+                         height="150"
+                         width="100"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=".col-sm-3"></div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">Спорт</h2>
+                        <label for="education">
+                            <input type="radio" id="education" class="ml-lg-5" value="спорт" name="education">
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">Рисуване</h2>
+                        <label for="education">
+                            <input type="radio" id="education" class="ml-lg-5" value="рисуване" name="education">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">Музика</h2>
+                        <label for="education">
+                            <input type="radio" id="education" class="ml-lg-5" value="музика" name="education">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">Танци</h2>
+                        <label for="education">
+                            <input type="radio" id="education" class="ml-lg-5" value="танци" name="education">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="col ">
+                        <h2 class="text-white">Математика</h2>
+                        <label for="education">
+                            <input type="radio" id="education" class="ml-lg-5" value="математика" name="education">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-holder d-flex justify-content-center">
+                <button class="btn btn-secondary text-white mb-3" type="submit">Запиши</button>
+            </div>
+        </form>
+    </div>
+
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

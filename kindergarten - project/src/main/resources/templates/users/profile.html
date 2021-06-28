@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+
+    <div class="text-center">
+        <h1>Профил</h1>
+        <div class="bg-blur">
+            <div class="row ">
+                <div class="col ">
+                    <h4>Потребителско име:</h4>
+                    <h4>[[${session.user.username}]]</h4>
+                </div>
+                <div class="col ">
+                    <h4>Име на дете:</h4>
+                    <h4>[[${session.user.childrenName}]]</h4>
+                </div>
+
+
+                <div class="col ">
+                    <h4>Имейл:</h4>
+                    <h4>[[${session.user.email}]]</h4>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="row ">
+                <div class="col ">
+                    <h4>Телефон:</h4>
+                    <h4>[[${session.user.phone}]]</h4>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col ">
+                    <h4>Адрес:</h4>
+                    <address class="h4">[[${session.user.address}]]</address>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="col ">
+                    <h4>ЗИП:</h4>
+                    <h4>[[${session.user.subject}]]</h4>
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col ">
+                    <h4>Група:</h4>
+                    <h4>[[${session.user.group}]]</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<th:block th:include="~{_shared/footer}" />
+</body>
+</html>

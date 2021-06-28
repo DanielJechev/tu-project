@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head-reg}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="text-center mb-3">
+        <h1 class="text-white mt-2">Здравей, [[${session.user.username}]]</h1>
+    </div>
+    <hr class="my-3"/>
+    <div class="container">
+        <div class="text-center">
+            <th:block th:if="${session.user.childrenName == null}">
+                <h2 class="text-white mt-2">Запишете Вашето дете сега.Натиснете бутона "запиши" и следвайте
+                    инструкциите.</h2>
+                <a href="/children/create" class="btn btn-secondary">Запиши</a>
+            </th:block>
+            <th:block th:unless="${session.user.childrenName == null}">
+                <h2 class="text-white mt-2">Вашето дете е успешно записано в системата.</h2>
+            </th:block>
+        </div>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}"/>
+</body>
+</html>

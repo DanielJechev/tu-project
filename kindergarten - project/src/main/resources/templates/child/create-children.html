@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<th:block th:include="~{_shared/head}"/>
+<body>
+<th:block th:include="~{_shared/header}"/>
+<main>
+    <div class="container">
+        <h1 class="text-center">Моля, попълнете данните на Вашето дете .</h1>
+        <form class="mx-auto w-100 bg-blur" th:action="@{/children/create}" method="post">
+            <div class="form-group">
+                <div class="label-holder textCol d-flex justify-content-center">
+                    <label for="name" class="h4 mb-2 text-white">Име и фамилия</label>
+                </div>
+                <input type="text" class="form-control mx-auto w-25" id="name" pattern="^[A-Z]{1}([-']?[A-Z]?[a-z]?)[a-z]+([-']?[a-z]+)*([\s\-]{1}[A-Z]{1}[a-z]+([-']?[a-z]+)+)+$" placeholder="Иван Иванов" name="name"/>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="ml-lg-5">
+                        <img src="/img/male.jpg" class="border border-secondary" alt="male image"
+                             height="300"
+                             width="200"/>
+                    </div>
+                    <div class="ml-lg-5">
+                        <img src="/img/female.jpg" class="border border-secondary" alt="female image"
+                             height="300" width="200"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4"></div>
+                    <div>
+                        <div class="col col-md-6 ml-lg-5">
+                            <h2 class="text-white">Момче</h2>
+                            <label for="gender">
+                                <input type="radio" id="gender" class="ml-lg-5" value="male" name="gender">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col col-md-6 ml-lg-5">
+                            <h2 class="text-white">Момиче</h2>
+                            <label for="gender">
+                                <input type="radio" id="gender" class="ml-lg-5" value="female" name="gender">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-holder d-flex justify-content-center">
+                <button class="btn btn-secondary text-white mb-3" type="submit">Запиши</button>
+            </div>
+        </form>
+    </div>
+</main>
+<th:block th:include="~{_shared/footer}" />
+</body>
+</html>
